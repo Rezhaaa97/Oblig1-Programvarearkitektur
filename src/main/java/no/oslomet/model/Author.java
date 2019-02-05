@@ -3,6 +3,7 @@ package no.oslomet.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "author")
@@ -12,7 +13,19 @@ public class Author {
     private long id;
     private String firstName;
     private String lastName;
-    private String nasjonalitet;
+    private String nationality;
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+    //Mapping
+    @OneToMany(mappedBy = "author")
+    private List<Book> books;
 
     public Author(){
 
@@ -22,7 +35,7 @@ public class Author {
         this.id = id;
         this.firstName = firstName;
         this.lastName=lastName;
-        this.nasjonalitet = nasjonalitet;
+        this.nationality = nasjonalitet;
     }
 
     public void setId(long id) {
@@ -37,8 +50,8 @@ public class Author {
         this.lastName = lastName;
     }
 
-    public void setNasjonalitet(String nasjonalitet) {
-        this.nasjonalitet = nasjonalitet;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     public long getId() {
@@ -53,7 +66,17 @@ public class Author {
         return lastName;
     }
 
-    public String getNasjonalitet() {
-        return nasjonalitet;
+    public String getNationality() {
+        return nationality;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", nationality='" + nationality + '\'' +
+                '}';
     }
 }

@@ -1,16 +1,18 @@
 package no.oslomet.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name = "book")
 public class Book {
 
+
+    @Id
     private long ISBN;
     private String title;
     private String releaseYear;
+    @ManyToOne
+    @JoinColumn(name="author_id")
     private Author author;
 
     public Book(){
@@ -23,6 +25,7 @@ public class Book {
         this.releaseYear = releaseYear;
         this.author = author;
     }
+
 
     public void setISBN(long ISBN) {
         this.ISBN = ISBN;
@@ -40,6 +43,7 @@ public class Book {
         this.author = author;
     }
 
+
     public long getISBN() {
         return ISBN;
     }
@@ -54,5 +58,16 @@ public class Book {
 
     public Author getAuthor() {
         return author;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+
+                ", ISBN=" + ISBN +
+                ", title='" + title + '\'' +
+                ", releaseYear='" + releaseYear + '\'' +
+                ", author=" + author +
+                '}';
     }
 }

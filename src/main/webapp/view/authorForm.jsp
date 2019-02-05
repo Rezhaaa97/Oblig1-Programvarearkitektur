@@ -27,7 +27,7 @@
                 <form:input type="text" class="form-control" placeholder="Last Name" path="lastName"/>
             </div>
             <div class="form-group">
-                <form:input type="text" class="form-control" placeholder="Nasjonalitet" path="nasjonalitet"/>
+                <form:input type="text" class="form-control" placeholder="Nationality" path="nationality"/>
             </div>
 
 

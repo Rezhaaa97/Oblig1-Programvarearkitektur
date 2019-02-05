@@ -22,7 +22,7 @@
                     <th scope="col">Id</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
-                    <th scope="col">Nasjonalitet</th>
+                    <th scope="col">Nationality</th>
 
 
                 </tr>
@@ -34,7 +34,7 @@
                         <th> ${author.id} </th>
                         <td>${author.firstName}</td>
                         <td>${author.lastName}</td>
-                        <td>${author.nasjonalitet}</td>
+                        <td>${author.nationality}</td>
 
 
                     </tr>

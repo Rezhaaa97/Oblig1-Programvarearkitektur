@@ -3,8 +3,13 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-
-<h2 class="text-primary my-5 ">Homepage...</h2>
+<div class="container">
+    <div class="row my-5">
+        <div class="col-sm-8 mx-auto">
+            <h1 class="text-primary text-center">Welcome to your online library</h1>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
